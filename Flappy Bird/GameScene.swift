@@ -23,18 +23,31 @@ class GameScene: SKScene {
         
         let backgroundTexture = SKTexture(imageNamed: "bg.png")
         
-        background = SKSpriteNode(texture: backgroundTexture)
+        let backgroundAnimation = SKAction.move(by: CGVector(dx: -backgroundTexture.size().width, dy: 0), duration: 5)
+        let shiftBackgroundAnimation = SKAction.move(by: CGVector(dx: backgroundTexture.size().width, dy: 0), duration: 0)
+        let moveBackgroundAnimationForever = SKAction.repeatForever(SKAction.sequence([backgroundAnimation, shiftBackgroundAnimation]))
         
-        background.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        var i: CGFloat = 0
         
-        background.size = CGSize(width: self.frame.width, height: self.frame.height)
+        while i < 3 {
+            
+            background = SKSpriteNode(texture: backgroundTexture)
+            
+            background.position = CGPoint(x: backgroundTexture.size().width * i, y: self.frame.midY)
+            
+            background.size.height = self.frame.height
+            
+            background.run(moveBackgroundAnimationForever)
+            
+            background.zPosition = -1
+            
+            self.addChild(background)
+            
+            i += 1
+            print(i)
+        }
         
-        let backgroundAnimation = SKAction.move(by: CGVector(dx: -1, dy: 0), duration: 0.1)
-        let moveBackgroundAnimation = SKAction.repeatForever(backgroundAnimation)
-        
-        background.run(moveBackgroundAnimation)
-        
-        self.addChild(background)
+       
         
         
         //flappy bird
