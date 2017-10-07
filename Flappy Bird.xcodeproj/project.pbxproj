@@ -15,6 +15,11 @@
 		FA2218E91F8831710002961E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2218E71F8831710002961E /* Main.storyboard */; };
 		FA2218EB1F8831710002961E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2218EA1F8831710002961E /* Assets.xcassets */; };
 		FA2218EE1F8831710002961E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2218EC1F8831710002961E /* LaunchScreen.storyboard */; };
+		FA2218FA1F8847540002961E /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2218F51F8847540002961E /* bg.png */; };
+		FA2218FB1F8847540002961E /* flappy1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2218F61F8847540002961E /* flappy1.png */; };
+		FA2218FC1F8847540002961E /* flappy2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2218F71F8847540002961E /* flappy2.png */; };
+		FA2218FD1F8847540002961E /* pipe1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2218F81F8847540002961E /* pipe1.png */; };
+		FA2218FE1F8847540002961E /* pipe2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2218F91F8847540002961E /* pipe2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		FA2218EA1F8831710002961E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA2218ED1F8831710002961E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2218EF1F8831710002961E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA2218F51F8847540002961E /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = ../../../../Downloads/img/bg.png; sourceTree = "<group>"; };
+		FA2218F61F8847540002961E /* flappy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flappy1.png; path = ../../../../Downloads/img/flappy1.png; sourceTree = "<group>"; };
+		FA2218F71F8847540002961E /* flappy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flappy2.png; path = ../../../../Downloads/img/flappy2.png; sourceTree = "<group>"; };
+		FA2218F81F8847540002961E /* pipe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pipe1.png; path = ../../../../Downloads/img/pipe1.png; sourceTree = "<group>"; };
+		FA2218F91F8847540002961E /* pipe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pipe2.png; path = ../../../../Downloads/img/pipe2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,11 @@
 				FA2218E31F8831710002961E /* GameScene.swift */,
 				FA2218E51F8831710002961E /* GameViewController.swift */,
 				FA2218E71F8831710002961E /* Main.storyboard */,
+				FA2218F51F8847540002961E /* bg.png */,
+				FA2218F61F8847540002961E /* flappy1.png */,
+				FA2218F71F8847540002961E /* flappy2.png */,
+				FA2218F81F8847540002961E /* pipe1.png */,
+				FA2218F91F8847540002961E /* pipe2.png */,
 				FA2218EA1F8831710002961E /* Assets.xcassets */,
 				FA2218EC1F8831710002961E /* LaunchScreen.storyboard */,
 				FA2218EF1F8831710002961E /* Info.plist */,
@@ -134,7 +149,12 @@
 			files = (
 				FA2218E91F8831710002961E /* Main.storyboard in Resources */,
 				FA2218E01F8831710002961E /* GameScene.sks in Resources */,
+				FA2218FA1F8847540002961E /* bg.png in Resources */,
 				FA2218EB1F8831710002961E /* Assets.xcassets in Resources */,
+				FA2218FE1F8847540002961E /* pipe2.png in Resources */,
+				FA2218FC1F8847540002961E /* flappy2.png in Resources */,
+				FA2218FD1F8847540002961E /* pipe1.png in Resources */,
+				FA2218FB1F8847540002961E /* flappy1.png in Resources */,
 				FA2218EE1F8831710002961E /* LaunchScreen.storyboard in Resources */,
 				FA2218E21F8831710002961E /* Actions.sks in Resources */,
 			);
