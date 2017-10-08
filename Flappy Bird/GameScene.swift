@@ -44,7 +44,7 @@ class GameScene: SKScene {
             self.addChild(background)
             
             i += 1
-            print(i)
+            
         }
         
        
@@ -58,20 +58,53 @@ class GameScene: SKScene {
         
         bird = SKSpriteNode(texture: birdTexture)
         
-        bird.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        
         let flapAnimation = SKAction.animate(with: [birdTexture, birdTexture2], timePerFrame: 0.4)
         let flyingAnimation = SKAction.repeatForever(flapAnimation)
         
         bird.run(flyingAnimation)
         
+        bird.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        
         self.addChild(bird)
+        
+        
+        //Ground barrier
+        
+        let ground = SKNode()
+        
+        ground.position = CGPoint(x: self.frame.midX, y: -self.frame.height / 2)
+        
+        ground.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.frame.width, height: 1))
+        
+        ground.physicsBody!.isDynamic = false
+        
+        self.addChild(ground)
+        
+        //Pipe one
+        
+        let pipeTexture = SKTexture(imageNamed: "pipe1.png")
+        
+        let pipe1 = SKSpriteNode(texture: pipeTexture)
+        
+        pipe1.position = CGPoint(x: self.frame.midX, y: self.frame.midY + pipeTexture.size().height / 2)
+        
+        self.addChild(pipe1)
         
       
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let birdTexture = SKTexture(imageNamed: "flappy1.png")
+        
+        bird.physicsBody = SKPhysicsBody(circleOfRadius: birdTexture.size().width / 2)
+        
+        bird.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
+
+        bird.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 150))
+
+        
         
     }
     
