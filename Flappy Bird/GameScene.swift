@@ -14,10 +14,52 @@ class GameScene: SKScene {
     var bird = SKSpriteNode()
     
     var background = SKSpriteNode()
+    
+    func makePipes() {
+        
+        
+        //Adds randomized gap between upper and lower pipes
+        
+        let movePipes = SKAction.move(by: CGVector(dx: -2 * self.frame.width, dy: 0), duration:TimeInterval(self.frame.width / 100))
+        
+        let gapHeight = bird.size.height * 5
+        
+        let movementAmount = arc4random() % UInt32(self.frame.height / 2)
+        
+        let pipeOffset = CGFloat(movementAmount) - self.frame.height / 4
+        
+        
+        //Upper Pipe
+        
+        let pipeTexture = SKTexture(imageNamed: "pipe1.png")
+        
+        let pipe1 = SKSpriteNode(texture: pipeTexture)
+        
+        pipe1.position = CGPoint(x: self.frame.midX + self.frame.width, y: self.frame.midY + pipeTexture.size().height / 2 + gapHeight / 2 + pipeOffset)
+        
+        pipe1.run(movePipes)
+        
+        self.addChild(pipe1)
+        
+        
+        // Lower Pipe
+        
+        let pipeTexture2 = SKTexture(imageNamed: "pipe2.png")
+        
+        let pipe2 = SKSpriteNode(texture: pipeTexture2)
+        
+        pipe2.position = CGPoint(x: self.frame.midX + self.frame.width, y: self.frame.midY - pipeTexture2.size().height / 2 - gapHeight / 2 + pipeOffset)
+        
+        pipe2.run(movePipes)
+        
+        self.addChild(pipe2)
+        
+    }
 
     
     override func didMove(to view: SKView) {
         
+        _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.makePipes), userInfo: nil, repeats: true)
         
         //background
         
@@ -80,21 +122,13 @@ class GameScene: SKScene {
         
         self.addChild(ground)
         
-        //Pipe one
-        
-        let pipeTexture = SKTexture(imageNamed: "pipe1.png")
-        
-        let pipe1 = SKSpriteNode(texture: pipeTexture)
-        
-        pipe1.position = CGPoint(x: self.frame.midX, y: self.frame.midY + pipeTexture.size().height / 2)
-        
-        self.addChild(pipe1)
-        
       
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //Makes bird jolt upwards when tapped
         
         let birdTexture = SKTexture(imageNamed: "flappy1.png")
         
@@ -102,7 +136,7 @@ class GameScene: SKScene {
         
         bird.physicsBody!.velocity = CGVector(dx: 0, dy: 0)
 
-        bird.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 150))
+        bird.physicsBody!.applyImpulse(CGVector(dx: 0, dy: 180))
 
         
         
